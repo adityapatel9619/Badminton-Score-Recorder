@@ -103,12 +103,12 @@ function checkscores(){
     }
 
     if(scoreTeamOne == scoreTeamTwo && scoreTeamOne&&scoreTeamTwo == target-1){
-        alert("Tie");
-        target+=2;
+        //alert("Tie");
+        target+=1;
         var temp = target;
         //Setting new tie value to previous target
         document.getElementById("txtTarget").value = temp;
-        document.getElementById("scoreDisplay").innerHTML = "New Score is: "+temp;
+        document.getElementById("scoreDisplay").innerHTML = "Target Increased to: "+temp;
         document.getElementById("scoreDisplay").style.display = "block";
     }
     
