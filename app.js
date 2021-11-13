@@ -38,6 +38,8 @@ function StartGame(){
     
     document.getElementById("dvTeamName").style.display = "none";
     document.getElementById("scoresec").style.display = "block";
+    let disptarget = document.getElementById("txtTarget").value;
+    document.getElementById("scoreDisplay").innerHTML = "Target is "+disptarget;
 
     //Name of The Team
     let nteamone = document.getElementById("txtone").value;
@@ -45,7 +47,6 @@ function StartGame(){
     
     document.getElementById("lblteamone").innerHTML = nteamone;
     document.getElementById("lblteamtwo").innerHTML = nteamtwo;
-
 
     //Scoreboard for Team 1
     document.getElementById("btnTeamOne").addEventListener('click',function(){
