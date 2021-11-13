@@ -50,13 +50,37 @@ function StartGame(){
     //Scoreboard for Team 1
     document.getElementById("btnTeamOne").addEventListener('click',function(){
         count1++;
-        document.getElementById("lblScoreTone").innerHTML = count1;      
+        document.getElementById("lblScoreTone").innerHTML = count1;
+        document.getElementById("jsOne").style.display = "block";
     })
 
+     document.getElementById("jsOne").addEventListener('click',function(){
+        if(count1 == "0"){
+            document.getElementById("jsOne").style.display = "none";
+        }
+        else{
+            count1-=1;
+            document.getElementById("lblScoreTone").innerHTML = count1;
+            document.getElementById("jsOne").style.display = "block";
+        }
+     })
+    
     //Scoreboard for Team 2
     document.getElementById("btnTeamTwo").addEventListener('click',function(){
         count2++;
         document.getElementById("lblScoreTtwo").innerHTML = count2;
+        document.getElementById("jsTwo").style.display = "block";
+    })
+
+    document.getElementById("jsTwo").addEventListener('click',function(){
+        if(count2 == "0"){
+            document.getElementById("jsTwo").style.display = "none";
+        }
+        else{
+            count2-=1;
+            document.getElementById("lblScoreTtwo").innerHTML = count2;
+            document.getElementById("jsTwo").style.display = "block";
+        }
     })
 
    document.body.addEventListener('click',function(){
@@ -77,9 +101,13 @@ function checkscores(){
         alert(winmsg);
         document.getElementById("btnTeamOne").disabled = true;
         document.getElementById("btnTeamTwo").disabled = true;
-        document.getElementById("dvTeamTwo").classList.remove("border-warning");
-        document.getElementById("dvTeamTwo").classList.add("border-success");
+        document.getElementById("dvTeamOne").classList.remove("border-warning");
+        document.getElementById("dvTeamOne").classList.add("border-success");
+        document.getElementById("dvTeamTwo").classList.add("border-danger");
+        document.getElementById("dvTeamOne").classList.add("border-5");
         document.getElementById("dvTeamTwo").classList.add("border-5");
+        document.getElementById("jsOne").style.display = "none";
+        document.getElementById("jsTwo").style.display = "none";
         setTimeout(function(){
             window.location.reload(1);
         }, 3000);
@@ -93,7 +121,11 @@ function checkscores(){
         document.getElementById("btnTeamTwo").disabled = true;
         document.getElementById("dvTeamTwo").classList.remove("border-danger");
         document.getElementById("dvTeamTwo").classList.add("border-success");
+        document.getElementById("dvTeamOne").classList.add("border-danger");
         document.getElementById("dvTeamTwo").classList.add("border-5");
+        document.getElementById("dvTeamOne").classList.add("border-5");
+        document.getElementById("jsOne").style.display = "none";
+        document.getElementById("jsTwo").style.display = "none";
         setTimeout(function(){
             window.location.reload(1);
         }, 3000);

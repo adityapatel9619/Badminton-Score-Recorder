@@ -5,3 +5,26 @@
 #scoreDisplay{
     display: none;
 }
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: Georgia, Times, serif;
+    margin-right: 12px;
+  }
+  
+  footer a {
+    color: hotpink;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: hotpink;
+}
+
+#heart{
+    color: red;
+    font-size: 25px;
+}
